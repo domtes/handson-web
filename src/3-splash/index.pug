@@ -1,0 +1,39 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    title Splash page
+    link(rel="stylesheet", href="../css/splash.css")
+    link(rel="stylesheet", href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css")
+  body
+    .text-container
+      main
+        h1
+          span Sai lavorare
+          br
+          span di squadra?
+
+        a.cta(href="#") Approfondisci ora >
+
+    .overlay
+      .modal
+        .close-button
+          i.ion-close
+        .text-box
+          p.lead Consigli utili per il gioco di squadra nella tua inbox.
+          p Iscriviti alla nostra newsletter per scaricare questo documento di 200+ pagine pieno zeppo dei segreti delle migliori squadre!
+        .graphic
+        form
+          input(type="text", placeholder="La tua email")
+          input(type="submit", value="Ci sto!")
+
+    script
+      | var cta = document.querySelector(".cta");
+      | var overlay = document.querySelector(".overlay");
+      | var close = document.querySelector(".close-button");
+      | function toggle_overlay() {
+      |     overlay.classList.toggle("shown"); 
+      | }
+      | cta.addEventListener("click", toggle_overlay);
+      | close.addEventListener("click", toggle_overlay);

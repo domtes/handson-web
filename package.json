@@ -1,0 +1,30 @@
+{
+  "name": "mpui",
+  "description": "Multi-page User Interface - a modular webapp template",
+  "version": "0.1.0",
+  "maintainers": [
+    {
+      "name": "Domenico Testa",
+      "email": "dte@bit4id.com",
+      "web": "http://doesntwork.me"
+    }
+  ],
+  "dependencies": {
+    "browser-sync": "",
+    "gulp": "",
+    "gulp-autoprefixer": "",
+    "gulp-cli": "",
+    "gulp-image": "",
+    "gulp-pug2": "",
+    "gulp-sass": "",
+    "gulp-sourcemaps": "",
+    "gulp-uglify": "",
+    "pump": ""
+  },
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://gitlab/dte/mpui"
+    }
+  ]
+}

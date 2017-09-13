@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed:700|Open+Sans")
+
+$black: #111111
+$gray: #eeeeee
+$yellow: #f8d902
+$white: #ffffff
+
+*
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+  border: 0
+  font-size: 100%
+  font: inherit
+  vertical-align: baseline
+
+body
+  height: 100vh
+  display: flex
+  align-items: center
+  justify-content: center
+
+  background:
+    color: $white
+    image: url("../images/splash.jpg")
+    size: cover
+    position: center
+
+  font-family: "Open Sans", sans-serif
+  font-size: 14px
+  line-height: 1.2
+  color: $gray
+
+  -webkit-font-smoothing: antialiasing
+  -webkit-text-size-adjust: 100% 
+
+  @media (max-width: 650px)
+    background-position: 10% 0
+
+h1, h2, h3, h4, h5, h6
+  color: $black
+  font-weight: bold
+  font-family: "Fira Sans Extra Condensed", sans-serif
+
+main
+  margin-left: 150px
+  max-width: 600px
+  text-transform: uppercase
+
+  h1
+    color: $yellow
+    font-size: 100px
+
+    span
+      display: inline-block
+      background-color: $black
+      margin-bottom: 5px
+      padding: 0 0.2em
+      
+
+  .cta
+    display: inline-block
+
+    padding: 0 0.2em
+
+    background: $yellow
+    color: $black
+
+    text-decoration: none
+    font-size: 50px
+
+    position: relative
+    left: 0
+    transition: left 200ms ease-in-out
+
+    &:hover
+      left: 20px
+
+  @media (max-width: 740px)
+    margin-left: 50px
+    h1
+      font-size: 80px
+    .cta
+      font-size: 20px
+
+  @media (max-width: 650px)
+    h1
+      font-size: 45px
+    .cta
+      font-size: 20px
+
+.text-container
+  width: 100%
+  height: 100%
+  display: flex
+  align-items: center
+  justify-content: center
+
+.overlay
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+
+  background-color: fade-out($yellow, .28)
+
+  display: flex
+  align-items: center
+  justify-content: center
+
+  opacity: 0
+  transition: opacity 200ms ease-in-out
+  z-index: -1
+
+  &.shown
+    z-index: 2
+    opacity: 1
+
+.modal
+  position: relative
+  max-width: 600px
+  padding: 30px
+
+  background: $white
+  box-shadow: 0px 4px 20px rgba($black, .4)
+
+  .close-button
+    position: absolute
+    right: -40px
+    top: -40px
+
+    height: 30px
+    width: 30px
+
+    font-size: 30px
+    line-height: 30px
+    text-align: center
+    cursor: pointer
+
+    color: $black
+
+    transition: all 100ms ease-in-out
+    &:hover
+      transform: scale(1.2)
+
+  .text-box
+    max-width: 50%
+    .lead
+      color: $black
+      font-size: 26px
+      line-height: 1.3
+
+    p
+      color: darken($gray, 25%)
+      font-size: 16px
+      margin-bottom: 20px
+
+  .graphic
+    background:
+      image: url("../images/deck.jpg")
+    position: absolute
+    top: 0
+    right: 0
+    width: 256px
+    height: 280px
+
+  form
+    position: relative
+    z-index: 2
+    background: $black
+    padding: 20px
+    margin: 60px -30px -30px
+
+    display: flex
+
+    input
+      height: 60px
+      border: none
+      display: inline-block
+      padding: 0 30px
+      font-size: 18px
+
+      &:focus
+        outline: none
+        box-shadow: 0px 0px 0px 2px $yellow inset
+
+      &[type="text"]
+        flex: 1
+
+      &[type="submit"]
+        margin-left: 10px
+        text-transform: uppercase
+        background-color: $yellow
+
+  @media (max-width: 720px)
+    margin: 10px
+    .close-button
+      right: 0
+
+  @media (max-width: 580px)
+    max-width: 100%
+    .graphic
+      display: none
+    .text-box
+      max-width: 100%
+
+    form
+      flex-direction: column
+
+      input[type="submit"]
+        margin: 0
+      input[type="text"]
+        margin-bottom: 5px
