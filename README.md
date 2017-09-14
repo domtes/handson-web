@@ -1,18 +1,20 @@
-# UX PowerTools for web applications
+# handson - webdesign
 
-This project implements a live styleguide compatible with the [UXPT Sketch design project][1].
+Questo progetto contiene i codici sorgenti degli esempi 
+sviluppati durante il workshop.
 
-It is implemented using PUG and SASS and can be built using [Gulp][2] or [CodeKit][3].
+## Istruzioni
 
-## Instructions
+Il server di sviluppo può essere lanciato utilizzando Docker.
+Per prima cosa, costruisci l'immagine:
 
-The development server can be launched using Docker.
-First, build the image:
+    $ docker build -t handson .
 
-    $ docker build -t uxpt .
+Questo comando costruirà l'immagine docker con Gulp e tutte le dipendenze
+necessarie.
 
-This will build the *uxpt* docker image with Gulp and all the  dependencies.
-Once the image has been built it can be run using the following:
+Una volta che l'immagina è stata costruita, il server può essere lanciato con il
+seguente comando:
 
     $ docker run --rm -it              \
       -p 3000:3000                     \
@@ -20,12 +22,8 @@ Once the image has been built it can be run using the following:
       -v $(pwd)/src:/home/node/app     \
       -v $(pwd)/build:/home/node/build uxpt
 
-Once the server starts open the browser at the ```http://DOCKER-HOST:3000``` address to see the live reloading preview.
-Browser windows will be automatically reloaded when source files are updated.
+Quando il server si avvia, apri il browser all'indirizzo ```http://DOCKER-HOST:3000```
+per vedere un'anteprima live del tuo progetto.
 
-On the **3001** port number is served the [Browser-sync](https://www.browsersync.io) management UI.
+Sulla porta **3001** invece si accede alla configurazione di [Browser-sync](https://www.browsersync.io).
 
-
-[1]: https://www.uxpower.tools/
-[2]: https://gulpjs.com/
-[3]: https://codekitapp.com/
